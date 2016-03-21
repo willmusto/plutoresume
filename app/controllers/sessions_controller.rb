@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       # e.g https://www.my-site.com/auth/google/oauth2/callback
       # don't forget to enter the last part: '/auth/google/oauth2/callback'
       # :redirect_uri => 'http://localhost:3000/auth/google_oauth2/callback'
-      :redirect_uri => 'https://protected-dawn-83867.herokuapp.com/auth/google_oauth2/callback'
+      :redirect_uri => 'https://salty-beach-57778.herokuapp.com/auth/google_oauth2/callback'
       )
     if request['code'] == nil
       auth_uri = auth_client.authorization_uri.to_s

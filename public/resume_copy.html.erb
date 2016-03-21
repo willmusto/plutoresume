@@ -89,7 +89,7 @@
 
 					<% (1..num_of_forms('schools')).each do |i| %>
 					
-							<% if is_featured(params[:degree_abbreviations_featured][i - 1], params[:degree_abbreviations][i - 1]) %>
+							<% if is_featured(params[:degree_abbreviations_featured], params[:degree_abbreviations][i - 1]) %>
 								
 								<p class="educationText"><span class="abrvEducation"><%= params[:degree_abbreviations][i - 1] %></span>, <%= get_education_section(params[:degree_name][i - 1], params[:schools][i - 1], params[:city_education][i - 1], params[:state_education][i - 1]) %><p class="educationYear"><%= params[:year_graduation][i - 1] %></p>
 						

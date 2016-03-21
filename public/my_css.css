@@ -235,6 +235,7 @@ h3.otherSection {
 
 p.otherSectionText {
 	margin-top: 2pt;
+	margin-bottom: 0pt;
 	text-align: justify;
 }
 

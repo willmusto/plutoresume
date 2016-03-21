@@ -218,7 +218,7 @@ class ApplicationController < ActionController::Base
 
   # Checks if item is checked as 'Featured'
   def is_featured(abbreviation_array, item)
-    if !abbreviation_array.include?(item).nil?
+    if !abbreviation_array.nil?
       abbreviation_array.include?(item)
     end
   end

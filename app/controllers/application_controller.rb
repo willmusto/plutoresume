@@ -218,7 +218,9 @@ class ApplicationController < ActionController::Base
 
   # Checks if item is checked as 'Featured'
   def is_featured(abbreviation_array, item)
-    abbreviation_array.include?(item)
+    if !abbreviation_array.include?(item).nil?
+      abbreviation_array.include?(item)
+    end
   end
 
   # Gets candidate's degree name, school name, city, and state

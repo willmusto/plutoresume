@@ -1,0 +1,13 @@
+<div class="description">
+	<div class="form-group"></div>
+  <div class="form-group">
+    <label for="descriptionTitle1">Description Title</label>
+    <%= text_field_tag :description_title, nil, class: "form-control", placeholder: "Description Title"  %>
+  </div>
+  <div class="form-group">
+  	<label for="comment">Description</label>
+    <%= text_area_tag :description_box, nil, class: "form-control", placeholder: "Description", rows: 5 %>
+  </div>
+  <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Back</a>
+  <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">Next</a>
+</div>

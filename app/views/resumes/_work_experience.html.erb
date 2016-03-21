@@ -1,0 +1,57 @@
+<div class="skillsForm">
+	<div class="form-group"></div>
+  <div class="form-group">
+    <label for="jobTitle1">Job Title</label>
+    <%= text_field_tag 'job_titles[]', nil, class: "form-control", placeholder: "Job Title" %>
+  </div>
+  <div class="form-group">
+  	<label for="companyName1">Company Name</label>
+    <%= text_field_tag 'company_names[]', nil, class: "form-control", placeholder: "Company Name" %>
+  </div>
+  <label for="exampleCities2">City</label>
+	<div class="form-inline">
+	  <div class="form-group">
+	    <%= text_field_tag 'cities[]', nil, class: "form-control", placeholder: "City" %>
+	  </div>
+	  <div class="form-group">
+		  <%= select_tag 'states[]', options_for_select(@states), prompt: "State", class: "form-control" %>
+	  </div>
+	</div>
+
+	<div class="form-group"></div>
+
+	<div class="row">
+	  <div class="form-group col-xs-2 col-md-2">
+	      <label for="name" class="control-label">Start Month</label>
+	      <%= select_tag 'start_months[]', options_for_select(@months), prompt: "Month", class: "form-control" %>
+	  </div>
+	  <div class="form-group col-xs-2 col-md-2">
+	      <label for="name" class="control-label">Start Year</label>
+	      <%= text_field_tag 'start_years[]', nil, :maxlength => 4, :size => 4, class: "form-control", placeholder: 'YYYY' %>
+	  </div>
+	  <div class="form-group col-xs-2 col-md-2">
+	      <label for="name" class="control-label">End Month</label>
+	      <%= select_tag 'end_months[]', options_for_select(@months), prompt: "Month", class: "form-control" %>
+	  </div>
+	  <div class="form-group col-xs-2 col-md-2">
+	      <label for="name" class="control-label">End Year</label>
+	      <%= text_field_tag 'end_years[]', nil, :maxlength => 4, :size => 4, class: "form-control", placeholder: 'YYYY' %>
+	  </div>
+	  <div class="form-group col-xs-2 col-md-2 checkInline">
+		  <%= check_box_tag 'current[]' %> Current
+	  </div>
+	</div>
+	
+	<div class="form-group"></div>
+
+  <div class="form-group">
+  	<label for="jobDescriptoin1">Job Description</label>
+	  <%= text_area_tag 'job_descriptions[]', nil, placeholder: 'Job Description.', rows: 5, class: "form-control" %>
+  </div>	
+
+  <div class="form-group">
+  	<label for="jobTitle1">Accomplishments</label>
+	  <%= text_area_tag 'accomplishments[]', nil, placeholder: 'Hitting enter in this section will create bullet points in your final resume.', rows: 5, class: "form-control" %>
+  </div>	
+</div>
+

@@ -1,0 +1,326 @@
+body {
+	font-family: 'Droid Serif';
+}
+
+img.logo {
+    width: 284.00px;
+    height: 109.00px;
+    margin-left: -24.00px;
+    margin-top: 0.00px;
+    /* transform: rotate(0.00rad) translateZ(0px); */
+    -webkit-transform: rotate(0.00rad) translateZ(0px);
+}
+
+img.companySlogan {
+    width: 350.00px;
+		position: relative;
+		left: 70px;
+		top: -45px; 
+}
+
+h1.header {
+	color: #980000;
+	font-size: 14pt;
+	margin-bottom: 2pt;
+
+	margin-top: 15pt;
+
+	font-family: 'Droid Serif';
+	font-weight: bold;
+}
+
+div.headers {
+	text-align: center;
+}
+
+h2.subheader {
+	margin-top: 0pt;
+	font-size: 10pt;
+	color: #943634;
+	font-weight: lighter;
+}
+
+p.descriptionText {
+	margin-top: 2pt;
+	font-size: 9pt;
+	font-style: italic;
+	text-align: justify;
+	font-family: 'Droid Serif';
+	/*display: inline-block;*/
+	/*word-break: break-word;*/
+}
+
+h3.descriptionTitle {
+	margin-bottom: 0pt;
+	font-size: 11pt;
+	font-family: 'Droid Serif';
+	font-weight: bold;
+}
+
+h3.careerHistory {
+	margin-bottom: 0pt;
+	font-size: 10pt;
+}
+
+span.CapitalizeLetter {
+	font-size: 12pt;
+}
+
+h4.companyName {
+	position: relative;
+	top: -1pt;
+	margin-top: 2pt;
+	/*margin-bottom: -15pt;*/
+	font-size: 10pt;
+}
+
+h4.sameCompanyName {
+	margin-bottom: -15pt;
+}
+
+h4.sameCareerDate {
+	margin-bottom: -15pt;
+}
+
+h4.uniqueCompanyName {
+	margin-bottom: 5pt;
+}
+
+h4.uniqueCareerDate {
+	margin-bottom: 5pt;
+}
+/*
+h4.sameCompanyName {
+	position: relative;
+	top: 15pt;
+}*/
+
+h4.careerDate {
+	position: relative;
+	top: 3pt;
+	font-size: 10pt;
+	margin-top: -15pt;
+	text-align: right;
+	/*margin-bottom: -15pt;*/
+}
+
+p.jobDescription {
+	text-align: justify;
+}
+
+div.JDescription {
+	margin-bottom: -15pt;
+}
+
+h4.jobTitle {
+	margin-top: -8pt;
+	margin-bottom: 2pt;
+	font-style: italic;
+	font-size: 10pt;
+	font-family: 'Droid Serif';
+}
+
+span.secondJobTitle {
+	font-family: 'Droid Serif';
+	font-style: italic;
+	margin-top: -7pt;
+	margin-bottom: 2pt;
+	font-size: 10pt;
+}
+
+span.secondJobTitleDate {
+	font-family: 'Droid Serif';
+	font-weight: normal;
+	margin-top: -7pt;
+	margin-bottom: 2pt;
+	font-size: 10pt;
+}
+
+p.secondjobDescription {
+	margin-top: -15pt;
+}
+
+p.secondAccomplishments {
+	margin-top: -10pt;
+	margin-bottom: 0pt;
+	font-weight: bold;
+}
+
+li.secondFirstAccomplishment {
+	margin-top: 2pt;
+}
+
+ul.secondAccomplishmentList {
+	margin-top: 0pt;	
+}
+
+p.jobDescription {
+	margin-top: 0pt;
+	margin-bottom: 1pt;
+}
+
+p.accomplishments {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-weight: bold;
+}
+
+ul.accomplishmentList {
+	margin-top: 0pt;
+}
+
+li.firstAccomplishment {
+	margin-top: 2pt;
+}
+
+h3.education {
+	margin-bottom: 0pt;
+	font-size: 10pt;
+}
+
+p.educationYear {
+	position: relative;
+	top: 10pt;
+	margin-top: -23pt;
+	text-align: right;
+}
+
+p.educationText {
+	margin-top: 2pt;
+	margin-bottom: 0pt;
+}
+
+span.abrvEducation {
+	font-weight: bold;
+}
+
+h3.certsAndLicensure {
+	padding-top: 10pt;
+	margin-bottom: 0pt;
+	font-size: 10pt;
+}
+
+p.certsAndLicensureText {
+	margin-top: 2pt;
+	margin-bottom: -2pt;
+}
+
+span.abrvCertsAndLicensure {
+	font-weight: bold;
+}
+
+h3.mshipsAndAffiliations {
+	padding-top: 3pt;
+	margin-bottom: 0pt;
+	font-size: 10pt;
+}
+
+p.mshipsAndAffiliationsText {
+	margin-top: 2pt;
+	margin-bottom: 0pt;
+	margin-bottom: -2pt;
+}
+
+h3.otherSection {
+	padding-top: 1pt;
+	margin-bottom: 0pt;
+	font-size: 10pt;
+}
+
+p.otherSectionText {
+	margin-top: 2pt;
+	text-align: justify;
+}
+
+h3.otherSection2 {
+	padding-top: 1pt;
+	margin-bottom: 0pt;
+	font-size: 10pt;
+}
+
+p.otherSectionText2 {
+	margin-top: 2pt;
+}
+
+p {
+	font-size: 10pt;
+	word-break: break-word;
+}
+
+li {
+	font-size: 10pt;
+}
+
+div.resumeBody {
+	margin-left: 18pt;
+	margin-bottom: 150pt;
+}
+
+.footer {
+	border: none;
+	margin-top: 5pt;
+}
+
+hr.footerBar {
+	width: 100%;
+	height: 1px;
+	background-color: #980000;
+	color: #980000;
+	position: relative;
+	border: none;
+	left: 15pt;
+}
+
+p.reppedBy {
+	text-align: center;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #434343;
+	margin-bottom: 2pt;
+	margin-top: 0pt;
+}
+div.address {
+	text-align: center;
+	font-size: 8pt;
+	font-weight: lighter;
+	color: #980000;
+	margin-top: 0pt;
+}
+
+.address1 {
+	margin-top: 3pt;
+	margin-bottom: 0pt;
+	font-size: 8pt;
+	font-weight: lighter;
+}
+.address2 {
+	margin-top: 2pt;
+	margin-bottom: 0pt;
+	font-size: 8pt;
+	font-weight: lighter;
+}
+.address3 {
+	margin-top: 2pt;
+	margin-bottom: 0pt;
+	font-size: 8pt;
+	font-weight: lighter;
+}
+
+div.pageNumber {
+	text-align: center;
+}
+
+span.page {
+	font-size: 9pt;
+}
+
+p.dynamicCandidateHeader {
+	word-wrap: all;
+	font-size: 12pt;
+	margin-left: 199pt;
+	position: relative;
+	bottom: -52pt;
+	font-weight: bold;
+	color: #980000;
+}
+

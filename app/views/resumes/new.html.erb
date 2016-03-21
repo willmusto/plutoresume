@@ -1,0 +1,292 @@
+<div class="col-md-3"></div>
+<div class="col-md-6">
+
+<%= form_tag '/resume/create', :id => 'instance_form' do %>
+
+<div id="accordion" role="tablist" aria-multiselectable="true">
+
+  <div class="row">
+    <div class="col-md-4 helpText">
+      <div class="panel panel-default helpText">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true">
+              Contact Information
+            </a>
+          </h4>
+        </div>
+        
+        <div id="contactInformationText" style="display: all">
+
+            <div class="form-group"></div>
+            
+            <p class="helpText">Contact information text</p>
+            
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" 
+                    aria-controls="collapseTwo" onclick="showHelpText('#descriptionHelpText', '#contactInformationText');">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div> 
+        <div id="descriptionHelpText" style="display: none">
+            
+            <div class="form-group"></div>
+
+            <p class="helpText">Description help text</p>
+            
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" 
+                    aria-controls="collapseTwo" onclick="showHelpText('#contactInformationText', '#descriptionHelpText', 'back');">
+                    <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" 
+                    aria-controls="collapseThree" onclick="showHelpText('#workExperienceHelpText', '#descriptionHelpText');">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div>    
+        <div id="workExperienceHelpText" style="display: none">
+            
+            <div class="form-group"></div>
+            
+            <p class="helpText">Work experience help text</p>
+            
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" 
+                    aria-controls="collapseTwo" onclick="showHelpText('#descriptionHelpText', '#workExperienceHelpText', 'back');">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" 
+                    aria-controls="collapseFour" onclick="showHelpText('#educationHelpText', '#workExperienceHelpText');">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div>
+        <div id="educationHelpText" style="display: none">
+            
+            <div class="form-group"></div>
+
+            <p class="helpText">Education help text</p>
+            
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" 
+                    aria-controls="collapseThree" onclick="showHelpText('#workExperienceHelpText', '#educationHelpText', 'back');">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" 
+                    aria-controls="collapseFive" onclick="showHelpText('#certificationsAndLicensureHelpText', '#educationHelpText');">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div>
+        <div id="certificationsAndLicensureHelpText" style="display: none">
+
+            <div class="form-group"></div>
+
+            <p class="helpText">Certification and licensure help text</p>
+
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" 
+                    aria-controls="collapseFour" onclick="showHelpText('#educationHelpText', '#certificationsAndLicensureHelpText', 'back');">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" 
+                    aria-controls="collapseSix" onclick="showHelpText('#mshipsAndProfessionalAffiliations', '#certificationsAndLicensureHelpText');">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div> 
+        <div id="mshipsAndProfessionalAffiliations" style="display: none">
+
+            <div class="form-group"></div>
+
+            <p class="helpText">Memberships and professional affiliations help text</p>
+
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" 
+                    aria-controls="collapseFive" onclick="showHelpText('#certificationsAndLicensureHelpText', '#mshipsAndProfessionalAffiliations', 'back');">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" 
+                    aria-controls="collapseSeven" onclick="showHelpText('#otherText', '#mshipsAndProfessionalAffiliations');">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div>     
+        <div id="otherText" style="display: none">
+            
+            <div class="form-group"></div>
+
+            <p class="helpText">Other help text</p>
+            
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" 
+                    aria-controls="collapseSix" onclick="showHelpText('#mshipsAndProfessionalAffiliations', '#otherText', 'back');">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" 
+                    aria-controls="collapseSeven" onclick="showHelpText('#other2Text', '#otherText');">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div>
+        <div id="other2Text" style="display: none">
+            
+            <div class="form-group"></div>
+
+            <p class="helpText">Other 2 help text</p>
+            
+            <div class="form-group"></div>
+            <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" 
+                    aria-controls="collapseSeven" onclick="showHelpText('#otherText', '#other2Text', 'back');">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+        </div>   
+      </div>
+    </div>
+
+    <div class="panel panel-default col-md-8 headingOne">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Contact Information
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div id="contact_information">
+          <%= render partial: "contact_information" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Description
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div id="description">
+      <%= render partial: "description" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Work Experience
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div id="work_experience">
+        <%= render partial: "work_experience" %>
+      </div>
+      <a href="javascript:;" id="addNewTag" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
+      <div class="form-group"></div>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseThree">Back</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">Next</a>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Education
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div id="education">
+        <%= render partial: "education" %>
+      </div>
+      <a href="javascript:;" id="addNewEducationForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
+      <div class="form-group"></div>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Back</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">Next</a>      
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Certifications and Licensure
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div id="certificationsAndLicensure">
+        <%= render partial: "certifications_licensure" %>
+      </div>
+      <a href="javascript:;" id="addNewCertificationsAndLicensureForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
+      <div class="form-group"></div>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">Next</a>      
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSix">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Memberships and Professional Affiliations
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div id="membershipsAndAffiliations">
+        <%= render partial: "memberships_affiliations" %>
+      </div>
+      <a href="javascript:;" id="addNewMembershipsAndAffiliationsForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
+      <div class="form-group"></div>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseTwo">Next</a>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSeven">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          Other
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+      <div id="other">
+        <%= render partial: "other" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingEight">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          Other 2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+      <div id="other">
+        <%= render partial: "other_2" %>
+      </div>
+  </div>
+</div>
+  <hr>
+  <%= submit_tag 'Create Resume', class: "btn btn-default" %>
+<% end %>
+
+<div class="hide" id="work_experience_form">
+  <%= render partial: "work_experience", locals: {skill: false} %>
+</div>
+
+<div class="hide" id="education_form">
+  <%= render partial: "education", locals: {skill: false} %>
+</div>
+
+<div class="hide" id="certificationsAndLicensure_form">
+  <%= render partial: "certifications_licensure", locals: {skill: false} %>
+</div>
+
+<div class="hide" id="membershipsAndAffiliations_form">
+  <%= render partial: "memberships_affiliations", locals: {skill: false} %>
+</div>
+
+
+</div>

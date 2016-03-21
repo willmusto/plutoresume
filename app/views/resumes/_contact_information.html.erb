@@ -1,0 +1,37 @@
+<div class="contact_information">
+		<div class="form-group"></div>
+	  <div class="form-group">
+	    <label for="exampleInputName1">Full Name</label>
+	    <%= text_field_tag :full_name, nil, class: "form-control", placeholder: "Full Name"  %>
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Address</label>
+	    <%= text_field_tag :primary_address_1, nil, class: "form-control", placeholder: "Address" %>
+	  </div>
+	<label for="exampleInputName2">City</label>
+	<div class="form-inline">
+	  <div class="form-group">
+	    <%= text_field_tag :city, nil, class: "form-control", placeholder: "City" %>
+	  </div>
+	  <div class="form-group">
+	  <%= select_tag :state, options_for_select(@states), prompt: "State", class: "form-control" %>
+	  </div>
+	  <div class="form-group">
+	  <%= number_field_tag :zip_code, nil, class: "form-control", placeholder: "Zip Code" %>
+	  </div>
+	</div>
+	<div class="form-group"></div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <%= text_field_tag :email, nil, class: "form-control", placeholder: "example@mail.com" %>
+  </div>
+  <div class="form-group">
+  	<label for="exampleInputEmail1">Phone Number</label>
+	  <div class="form-inline">
+	    <%= text_field_tag :phone_number_1, nil, :maxlength => 3, :size => 3, class: "form-control" %> - 
+	    <%= text_field_tag :phone_number_2, nil, :maxlength => 3, :size => 3, class: "form-control" %> - 
+	    <%= text_field_tag :phone_number_3, nil, :maxlength => 3, :size => 3, class: "form-control" %>
+	  </div>
+  </div>
+	  <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Next</a>
+</div>

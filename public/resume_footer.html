@@ -1,0 +1,34 @@
+<link href="my_css.css" rel='stylesheet' type='text/css'>
+<html>
+  <head>
+    <script type="text/javascript">
+      function subst() {
+        var vars={};
+        var x=document.location.search.substring(1).split('&');
+        for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+        var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+        for(var i in x) {
+          var y = document.getElementsByClassName(x[i]);
+          for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+        }
+        // var header = document.getElementsByClassName('specialHeader')[0].innerHTML
+        // var h = ['hdr'];
+        // document.getElementsByClassName['page'][0].innerHTML = 'llll';
+      }
+    </script>
+  </head>
+  <body style="margin: 0;" onload="subst();">
+    <hr class="footer footerBar">
+    <div class="footer footerContent">
+      <p class="reppedBy">This candidate is represented by:</p>
+      <div class="address">
+        <p class="address1">The Roman Healthcare Group, LLC</p>
+        <p class="address2">101 E. Crawford Street, Suite 401, Dalton, GA 30720</p>
+        <p class="address3">706.277.0124</p>
+      </div>
+    </div>
+    <div class="pageNumber">
+      <span class="page"></span>
+    </div>
+  </body>
+</html>

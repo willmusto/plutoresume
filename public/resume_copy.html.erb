@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<style type="text/css">
+		  <%= File.read(Rails.root.join("public","my_css.css")) %>
+		</style>
+    <meta name="pdfkit-margin_top" content="1.30in"/>
+    <meta name="pdfkit-margin_bottom" content="1.05in"/>
+    <meta name="pdfkit-margin_left" content="0.55in"/>
+    <meta name="pdfkit-margin_right" content="0.70in"/>
+    <title>Resume</title>
+
+</head>
+<body>
+
+    <div class="resumeBody">
+
+	    <div class="headers">
+		    <h1 class="header specialHeader"><%= get_header %></h1>
+		    <h2 class="subheader"><%= get_sub_header %></h3>
+	    </div>
+
+			<h3 class="descriptionTitle"><%= params[:description_title] %></h3>
+			<p class="descriptionText"><%= params[:description_box] %></p>
+
+
+			<!-- WORK HISTORY SECTION START -->
+
+			<% if !is_param_array_empty(params[:job_titles]) %>
+
+				<h3 class="careerHistory"><span class="CapitalizeLetter">C</span>AREER <span class="CapitalizeLetter">H</span>ISTORY</h3>
+
+				<% (1..num_of_forms('job_titles')).each do |i| %>
+					
+					<% if company_start_time = is_next_company_same(params[:company_names][i - 1], i - 1, params[:company_names]) %>
+
+						<h4 class="companyName sameCompanyName"><%= params[:company_names][i - 1] %> - <%= params[:cities][i - 1] %>, <%= get_state_abbreviation(params[:states][i - 1]) %></h4>	<h4 class="careerDate sameCareerDate"><%= get_date(company_start_time[0], company_start_time[1], params[:end_months][i - 1], params[:end_years][i - 1], i) %></h4>
+						<div class="JDescription"><h4 class="JobTitle"><span class="secondJobTitle"><%= params[:job_titles][i - 1] %></span> <span class="secondJobTitleDate">(<%= get_date(params[:start_months][i - 1], params[:start_years][i - 1], params[:end_months][i - 1], params[:end_years][i - 1], i) %>)</span></h4></div>
+						<p class="jobDescription"><%= params[:job_descriptions][i - 1] %></p>
+
+							<% if !params[:accomplishments][i - 1].empty? %>
+								<p class="accomplishments">Accomplishments include:</p>
+								<ul class="accomplishmentList">
+								<% bullet_point_items(params[:accomplishments][i - 1]).each do |item| %>
+									<li class="firstAccomplishment"><%= item %></li>
+							<% end %>
+						<% end %>
+						</ul>
+
+					<% elsif is_company_unique(params[:company_names][i - 1], params[:company_names]) %>
+
+						<h4 class="companyName uniqueCompanyName"><%= params[:company_names][i - 1] %> - <%= params[:cities][i - 1] %>, <%= get_state_abbreviation(params[:states][i - 1]) %></h4>	<h4 class="careerDate uniqueCareerDate"><%= get_date(params[:start_months][i - 1], params[:start_years][i - 1], params[:end_months][i - 1], params[:end_years][i - 1], i) %></h4>
+						<h4 class="jobTitle"><%= params[:job_titles][i - 1] %></h4>
+						<p class="jobDescription"><%= params[:job_descriptions][i - 1] %></p>
+
+							<% if !params[:accomplishments][i - 1].empty? %>
+								<p class="accomplishments">Accomplishments include:</p>
+								<ul class="accomplishmentList">
+								<% bullet_point_items(params[:accomplishments][i - 1]).each do |item| %>
+									<li class="firstAccomplishment"><%= item %></li>
+							<% end %>
+						<% end %>
+						</ul>
+
+					<% else %>
+
+						<h4 class="JobTitle"><span class="secondJobTitle"><%= params[:job_titles][i - 1] %></span> <span class="secondJobTitleDate">(<%= get_date(params[:start_months][i - 1], params[:start_years][i - 1], params[:end_months][i - 1], params[:end_years][i - 1], i) %>)</span></h4>
+						<p class="secondjobDescription"><%= params[:job_descriptions][i - 1] %></p>
+						
+						<% if !params[:accomplishments][i - 1].empty? %>
+							<p class="secondAccomplishments">Accomplishments include:</p>
+							<ul class="secondAccomplishmentList"><% bullet_point_items(params[:accomplishments][i - 1]).each do |item| %>
+								<li class="secondFirstAccomplishment"><%= item %></li>
+								<% end %>
+							</ul>
+						<% end %>					
+
+					<% end %>
+
+				<% end %>
+			<% end %>
+			<!-- WORK HISTORY SECTION END -->
+
+			<!-- EDUCATION SECTION START -->
+			
+
+				<% if !is_param_array_empty(params[:schools]) %>
+
+					<h3 class="education"><span class="CapitalizeLetter">E</span>DUCATION</h3>
+
+					<% (1..num_of_forms('schools')).each do |i| %>
+						
+						<% if is_featured(params[:degree_abbreviations_featured], params[:degree_abbreviations][i - 1]) %>
+							
+							<p class="educationText"><span class="abrvEducation"><%= params[:degree_abbreviations][i - 1] %></span>, <%= get_education_section(params[:degree_name][i - 1], params[:schools][i - 1], params[:city_education][i - 1], params[:state_education][i - 1]) %><p class="educationYear"><%= params[:year_graduation][i - 1] %></p>
+						
+						<% else %>
+
+							<p class="educationText"><%= params[:degree_abbreviations][i - 1] %>, <%= get_education_section(params[:degree_name][i - 1], params[:schools][i - 1], params[:city_education][i - 1], params[:state_education][i - 1]) %><p class="educationYear"><%= params[:year_graduation][i - 1] %></p>
+					
+						<% end %>
+					
+					<% end %>
+
+				<% end %>
+
+			<!-- EDUCATION SECTION END -->
+
+			<!-- CERTS & LICENSURE START -->
+
+				<% if !is_param_array_empty(params[:cert_or_license]) %>
+
+					<h3 class="certsAndLicensure"><span class="CapitalizeLetter">C</span>ERTIFICATIONS AND <span class="CapitalizeLetter">L</span>ICENSURE</h3>
+
+					<% (1..num_of_forms('cert_or_license')).each do |i| %>
+						
+						<% if is_featured(params[:cert_or_license_abbreviations_featured], params[:cert_or_license_abbreviations][i - 1]) %>
+							
+							<p class="certsAndLicensureText"><span class="abrvCertsAndLicensure"><%= params[:cert_or_license_abbreviations][i - 1] %></span>, <%= get_cert_and_license_section(params[:cert_or_license_abbreviations][i - 1], params[:cert_or_license][i - 1]) %></p>
+						
+						<% else %>
+
+							<p class="certsAndLicensureText"><%= params[:cert_or_license_abbreviations][i - 1] %>, <%= get_cert_and_license_section(params[:cert_or_license_abbreviations][i - 1], params[:cert_or_license][i - 1]) %></p>
+					
+						<% end %>
+					
+					<% end %>
+
+				<% end %>
+
+			<!-- CERTS & LICENSURE END -->
+
+			<!-- MEMBERSHIPS AND PROFESSIONAL AFFILIATIONS START -->
+
+				<% if !is_param_array_empty(params[:organization_name]) %>
+
+					<h3 class="mshipsAndAffiliations"><span class="CapitalizeLetter">M</span>EMBERSHIPS AND PROFESSIONAL <span class="CapitalizeLetter">A</span>FFILIATIONS</h3>
+
+					<% (1..num_of_forms('organization_name')).each do |i| %>
+
+						<p class="mshipsAndAffiliationsText"><%= get_mship_affiliations_section(params[:organizational_abbreviations][i - 1], params[:organization_name][i - 1], params[:position][i - 1]) %></p>
+				
+					<% end %>
+
+				<% end %>
+
+			<!-- MEMBERSHIPS AND PROFESSIONAL AFFILIATIONS END -->
+
+			<!-- OTHER SECTION START -->
+
+			<% (1..num_of_forms('other_contents')).each do |i| %>
+
+				<% if !is_param_array_empty(params[:other_contents]) %>
+
+					<h3 class="otherSection"><span class="CapitalizeLetter">O</span>THER</h3>
+
+						<p class="otherSectionText"><%= params[:other_contents][i - 1] %></p>
+
+				<% end %>
+
+			<% end %>
+
+
+			<!-- OTHER SECTION END -->
+
+			<!-- OTHER SECTION 2 START -->
+
+			<% (1..num_of_forms('other_2_contents')).each do |i| %>
+			
+				<% if !is_param_array_empty(params[:other_2_contents]) %>
+
+					<h3 class="otherSection2"><span class="CapitalizeLetter">O</span>THER 2</h3>
+
+						<ul class="accomplishmentList">
+						<% bullet_point_items(params[:other_2_contents][i - 1]).each do |item| %>
+							<li class="firstAccomplishment"><%= item %></li>
+						<% end %>
+						</ul>
+				
+				<% end %>
+
+			<% end %>
+
+			<!-- OTHER SECTION 2 END -->
+
+		</div>
+</body>
+</html>

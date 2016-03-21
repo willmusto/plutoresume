@@ -1,0 +1,78 @@
+// Place all the styles related to the resumes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hide {
+	display: none;
+}
+
+.form-group.col-xs-3.col-md-3 {
+	margin-right: -16pt;
+}
+
+.featuredCheckInline {
+	margin-top: 20pt;
+}
+
+.form-group.col-xs-4.col-md-4.checkInline {
+	margin-top: 3%;
+}
+
+.form-group.col-xs-2.col-md-2.checkInline {
+	margin-top: 3%;
+}
+
+.form-group.col-xs-3.col-md-3.checkInLine {
+	margin-top: 3%;
+}
+
+.panel, .panel-group .panel-heading+.panel-collapse>.panel-body{
+    border: none;
+}
+
+h4.panel-title > a {
+	text-decoration: none;
+	background-color: transparent;
+	color: #666;
+}
+
+h4.panel-title > a:hover {
+	text-decoration: none;
+	background-color: transparent;
+	color: #666;
+}
+
+h4.panel-title > a:visited {
+	text-decoration: none;
+	background-color: transparent;
+	color: #666;
+}
+
+.col-md-4.helpText {
+	position: fixed;
+	left: 30pt;
+	margin-right: -225pt;
+	max-width: 350px;
+	text-align: justify;
+}
+
+.hidden {
+     display:none;
+}
+
+.headingOne {
+	width: 100%;
+}
+
+p.helpText {
+	text-align: left;
+}
+
+.alert.alert-success {
+    display: block;
+    margin-left: 42%;
+    margin-right: 42%;
+    margin-top: 15%;
+    text-align: center;
+    font-weight: bold;
+}

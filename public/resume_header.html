@@ -1,0 +1,38 @@
+<!doctype html>
+<link href="my_css.css" rel='stylesheet' type='text/css'>
+<html>
+    <head>
+        <script type="text/javascript" src="/app/public/header.json"></script>
+        <script type="text/javascript">
+                function loadJSON() {
+
+                var vars={};
+                var x=document.location.search.substring(1).split('&');
+                for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+                var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+                for(var i in x) {
+                  var y = document.getElementsByClassName(x[i]);
+                  for(var j=0; j<y.length; ++j) {
+                    y[j].textContent = vars[x[i]];
+                    if (y[j].textContent !== '1') {
+                        var json = JSON.parse(data);
+                        document.getElementsByClassName('dynamicCandidateHeader')[0].innerHTML = json.header;
+                        document.getElementsByClassName('companySlogan')[0].setAttribute('style', 'display: none');
+                    }
+                    else {
+                        document.getElementsByClassName('dynamicCandidateHeader')[0].setAttribute('style', 'display: none');
+                    }
+                  }
+                }
+            }       
+        </script>
+    </head>
+    <body style="margin: 0;" onload="loadJSON();">
+        <div class="headerContent">
+            <span class="page" style="display: none;"></span>
+            <p class="dynamicCandidateHeader" style="display: all">Candidate Name</p>
+            <img src="/app/public/images/image01.png" class="logo">
+            <img src="/app/public/images/image03.png" class="companySlogan" style="display: all" />
+        </div>
+    </body>
+</html>

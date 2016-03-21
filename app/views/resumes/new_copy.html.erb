@@ -1,0 +1,70 @@
+<%= form_tag '/resume/create', :id => 'instance_form' do %>
+
+	<h3>Contact Information</h3>
+	<div id="contact_information">
+	<%= render partial: "contact_information" %>
+	</div>
+
+	<hr>
+	<h3>Description</h3>
+	<div id="description">
+	<%= render partial: "description" %>
+	</div>
+	
+	<hr>
+	<h3>Work Experience</h3>
+	<div id="work_experience">
+		<%= render partial: "work_experience" %>
+	</div>
+	<a href="javascript:;" id="addNewTag">Add New Tag</a>
+
+	<hr>
+	<h3>Education</h3>
+	<div id="education">
+		<%= render partial: "education" %>
+	</div>
+	<a href="javascript:;" id="addNewEducationForm">Add New Tag</a>
+
+	<hr>
+	<h3>Certifications and Licensure</h3>
+	<div id="certificationsAndLicensure">
+		<%= render partial: "certifications_licensure" %>
+	</div>
+	<a href="javascript:;" id="addNewCertificationsAndLicensureForm">Add New Tag</a>
+
+	<hr>
+	<h3>Memberships and Professional Affiliations</h3>
+	<div id="membershipsAndAffiliations">
+		<%= render partial: "memberships_affiliations" %>
+	</div>
+	<a href="javascript:;" id="addNewMembershipsAndAffiliationsForm">Add New Tag</a>
+
+	<hr>
+	<h3>Other</h3>
+	<div id="other">
+		<%= render partial: "other" %>
+	</div>
+
+	<hr>
+	<h3>Other 2</h3>
+	<div id="other">
+		<%= render partial: "other_2" %>
+	</div>
+	<%= submit_tag 'Create Resume' %>
+<% end %>
+
+<div class="hide" id="work_experience_form">
+	<%= render partial: "work_experience", locals: {skill: false} %>
+</div>
+
+<div class="hide" id="education_form">
+	<%= render partial: "education", locals: {skill: false} %>
+</div>
+
+<div class="hide" id="certificationsAndLicensure_form">
+	<%= render partial: "certifications_licensure", locals: {skill: false} %>
+</div>
+
+<div class="hide" id="membershipsAndAffiliations_form">
+	<%= render partial: "memberships_affiliations", locals: {skill: false} %>
+</div>

@@ -124,7 +124,7 @@
 						
 						<% if is_featured(params[:cert_or_license_abbreviations_featured], params[:cert_or_license_abbreviations][i - 1]) %>
 							
-							<p class="certsAndLicensureText"><span class="abrvCertsAndLicensure"><%= params[:cert_or_license_abbreviations][i - 1] %></span>, <%= get_cert_and_license_section(params[:cert_or_license_abbreviations][i - 1], params[:cert_or_license][i - 1]) %></p>
+							<p class="certsAndLicensureText"><span class="abrvCertsAndLicensure"><%= params[:cert_or_license_abbreviations][i - 1] %></span>, <%= params[:cert_or_license][i - 1]) %></p>
 						
 						<% else %>
 

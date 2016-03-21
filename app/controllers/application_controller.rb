@@ -99,7 +99,7 @@ class ApplicationController < ActionController::Base
     city = params[:city]
     state = get_state_abbreviation(params[:state])
     zip = params[:zip_code]
-    phone = "#{params[:phone_number_1] + '-' + params[:phone_number_2] + '-' + params[:phone_number_3]}"
+    phone = "#{params[:phone_number_1] + '.' + params[:phone_number_2] + '.' + params[:phone_number_3]}"
     email = params[:email]
 
     if email.blank? && params[:phone_number_1].blank?

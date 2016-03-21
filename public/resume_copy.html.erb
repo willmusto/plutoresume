@@ -95,7 +95,15 @@
 						
 							<% else %>
 
-								<p class="educationText"><%= params[:degree_abbreviations][i - 1] %>, <%= get_education_section(params[:degree_name][i - 1], params[:schools][i - 1], params[:city_education][i - 1], params[:state_education][i - 1]) %><p class="educationYear"><%= params[:year_graduation][i - 1] %></p>
+								<% if <%= params[:degree_abbreviations][i - 1].blank? %>
+									
+									<p class="educationText"><%= params[:degree_abbreviations][i - 1] %>, <%= get_education_section(params[:degree_name][i - 1], params[:schools][i - 1], params[:city_education][i - 1], params[:state_education][i - 1]) %><p class="educationYear"><%= params[:year_graduation][i - 1] %></p>
+								
+								<% else %>								
+									
+									<p class="educationText"><%= params[:degree_abbreviations][i - 1] %>, <%= get_education_section(params[:degree_name][i - 1], params[:schools][i - 1], params[:city_education][i - 1], params[:state_education][i - 1]) %><p class="educationYear"><%= params[:year_graduation][i - 1] %></p>
+								
+								<% end %>
 
 						<% end %>		
 

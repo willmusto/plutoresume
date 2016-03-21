@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user, :is_field_empty, :num_of_forms, :bullet_point_items, :get_header, :is_company_same_as_last_one, :asset_data_base64, :get_sub_header, 
-                :is_param_array_empty
+                :is_param_array_empty, :get_rest_of_title, :get_first_letter
 
   def current_user
   	@current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -237,6 +237,16 @@ class ApplicationController < ActionController::Base
   # Returns membership abbreviation, organization full name and position held within organization
   def get_mship_affiliations_section(membership_abbreviation, organization_name, position)
     return "#{membership_abbreviation + ', ' + organization_name + ' - ' + position}"
+  end
+
+  # gets Other and Other 2 title after the first letter
+  def get_rest_of_title(title)
+    return title[1..-1]
+  end
+
+  # gets first letter from title
+  def get_first_letter(title)
+    return title[0]
   end
 
   private

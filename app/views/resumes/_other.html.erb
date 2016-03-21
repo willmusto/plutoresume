@@ -1,6 +1,10 @@
 <div class="other">
 	<div class="form-group"></div>
   <div class="form-group">
+    <label for="otherTitle1">Other Title</label>
+    <%= text_field_tag :other_title, nil, class: "form-control", placeholder: "Title for this Section"  %>
+  </div>
+  <div class="form-group">
 	  <label for="organization">Content</label>
 	  <%= text_area_tag 'other_contents[]', nil, placeholder: '', class: "form-control", rows: 5 %>
   </div>

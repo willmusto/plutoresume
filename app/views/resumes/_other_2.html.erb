@@ -1,6 +1,10 @@
 <div class="other2">
 	<div class="form-group"></div>
   <div class="form-group">
+    <label for="other2Title1">Other 2 Title</label>
+    <%= text_field_tag :other_2_title, nil, class: "form-control", placeholder: "Title for this Section"  %>
+  </div>
+  <div class="form-group">
 	  <label for="organization">Content</label>
 	  <%= text_area_tag 'other_2_contents[]', nil, placeholder: 'Hitting enter in this section will create bullet points in your final resume.', class: "form-control", rows: 5 %>
   </div>

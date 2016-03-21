@@ -157,10 +157,15 @@ p.secondAccomplishments {
 
 li.secondFirstAccomplishment {
 	margin-top: 2pt;
+	text-align: justify;
 }
 
 ul.secondAccomplishmentList {
 	margin-top: 0pt;	
+}
+
+li.other2list {
+	text-align: justify;
 }
 
 p.jobDescription {
@@ -180,6 +185,7 @@ ul.accomplishmentList {
 
 li.firstAccomplishment {
 	margin-top: 2pt;
+	text-align: justify;
 }
 
 h3.education {

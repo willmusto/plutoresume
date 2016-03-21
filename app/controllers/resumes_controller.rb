@@ -44,12 +44,12 @@ class ResumesController < ApplicationController
 		# in which you want PDF file to get uploaded
 		resume = template_to_pdf
 		filename = "#{get_header}"
-		drive.insert_file({title: filename, parents: [{"id": '0B4kn-7aQywsRYmhXZV8zZ2REU0E'}]}, upload_source: resume,
+		drive.insert_file({title: filename, parents: [{"id": '0B6xmCwBlc1DoQWhTNDg2a1p1UWs'}]}, upload_source: resume,
 			content_type: 'application/pdf')
 
 		# Inside parents: [{"id": '0B4kn-7aQywsRYmhXZV8zZ2REU0E'}]} replace the id '0B4kn-7aQywsRYmhXZV8zZ2REU0E' with the id of your master shared folder
 		# in which you want Word file to get uploaded
-		drive.insert_file({title: filename, parents: [{"id": '0B4kn-7aQywsRYmhXZV8zZ2REU0E'}]}, upload_source: resume,
+		drive.insert_file({title: filename, parents: [{"id": '0B6xmCwBlc1DoWTBibXNfbmZQbDQ'}]}, upload_source: resume,
 			content_type: 'application/msword')
 
 		File.delete(resume) if File.exist?(resume)

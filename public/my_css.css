@@ -113,6 +113,10 @@ p.jobDescription {
 	text-align: justify;
 }
 
+p.secondjobDescription {
+	text-align: justify;
+}
+
 div.JDescription {
 	margin-bottom: -15pt;
 }

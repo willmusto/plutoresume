@@ -106,6 +106,8 @@ class ApplicationController < ActionController::Base
       sub_header = "#{street + ' &bull; ' + city + ', ' + state + ' ' + zip}"
     elsif email.blank?
       sub_header = "#{street + ' &bull; ' + city + ', ' + state + ' ' + zip + ' &bull; ' + email}"
+    elsif state.blank
+      sub_header = "#{street + ' &bull; ' + city + ', ' + zip + ' &bull; ' + phone + ' &bull; ' + email}"
     else
       sub_header = "#{street + ' &bull; ' + city + ', ' + state + ' ' + zip + ' &bull; ' + phone + ' &bull; ' + email}"
     end

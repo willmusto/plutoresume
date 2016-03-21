@@ -83,11 +83,16 @@ h4.sameCareerDate {
 }
 
 h4.uniqueCompanyName {
-	margin-bottom: 5pt;
+	padding-top: 5pt;
+	margin-bottom: 0pt;
 }
 
-h4.uniqueCareerDate {
-	margin-bottom: 5pt;
+h4.UniqueJobTitle {
+	font-style: italic;
+	font-size: 10pt;
+	font-family: 'Droid Serif';	
+	padding-top: 8pt;
+	margin-bottom: 0pt;
 }
 /*
 h4.sameCompanyName {

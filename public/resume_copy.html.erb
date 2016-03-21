@@ -49,9 +49,9 @@
 
 					<% elsif is_company_unique(params[:company_names][i - 1], params[:company_names]) %>
 
-						<h4 class="companyName uniqueCompanyName"><%= params[:company_names][i - 1] %> - <%= params[:cities][i - 1] %>, <%= get_state_abbreviation(params[:states][i - 1]) %></h4>	<h4 class="careerDate uniqueCareerDate"><%= get_date(params[:start_months][i - 1], params[:start_years][i - 1], params[:end_months][i - 1], params[:end_years][i - 1], i) %></h4>
-						<h4 class="jobTitle"><%= params[:job_titles][i - 1] %></h4>
-						<p class="jobDescription"><%= params[:job_descriptions][i - 1] %></p>
+						<h4 class="companyName uniqueCompanyName"><%= params[:company_names][i - 1] %> - <%= params[:cities][i - 1] %>, <%= get_state_abbreviation(params[:states][i - 1]) %></h4>	<h4 class="careerDate sameCareerDate"><%= get_date(params[:start_months][i - 1], params[:start_years][i - 1], params[:end_months][i - 1], params[:end_years][i - 1], i) %></h4>
+						<h4 class="UniqueJobTitle"><%= params[:job_titles][i - 1] %></h4>
+						<p class="jobDescription uniqueJobDescription"><%= params[:job_descriptions][i - 1] %></p>
 
 							<% if !params[:accomplishments][i - 1].empty? %>
 								<p class="accomplishments">Accomplishments include:</p>

@@ -49,7 +49,7 @@ class ResumesController < ApplicationController
 
 		# Inside parents: [{"id": '0B4kn-7aQywsRYmhXZV8zZ2REU0E'}]} replace the id '0B4kn-7aQywsRYmhXZV8zZ2REU0E' with the id of your master shared folder
 		# in which you want Word file to get uploaded
-		drive.insert_file({title: filename + '.docx', parents: [{"id": '0B6xmCwBlc1DoWTBibXNfbmZQbDQ'}]}, upload_source: resume,
+		drive.insert_file({title: filename + '.doc', parents: [{"id": '0B6xmCwBlc1DoWTBibXNfbmZQbDQ'}]}, upload_source: resume,
 			content_type: 'application/msword')
 
 		File.delete(resume) if File.exist?(resume)

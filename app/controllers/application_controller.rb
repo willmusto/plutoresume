@@ -148,8 +148,8 @@ class ApplicationController < ActionController::Base
             changed = true
           elsif index != 0
             if (current_company == company) && ((current_index - index).abs == 1)
-              start_month = params[:start_months][index]
-              start_year = params[:start_years][index]
+              # start_month = params[:start_months][index]
+              start_year = params[:start_years][current_index]
               changed = true
             # else
             #   changed = false

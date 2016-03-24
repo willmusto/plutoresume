@@ -211,6 +211,7 @@ p.educationYear {
 
 p.educationText {
 	margin-top: 2pt;
+	max-width: 200px;
 	margin-bottom: 0pt;
 }
 

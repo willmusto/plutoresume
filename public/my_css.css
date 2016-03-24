@@ -173,6 +173,10 @@ p.jobDescription {
 	margin-bottom: 1pt;
 }
 
+div.noAccomplishments {
+	margin-top: 10pt;
+}
+
 p.accomplishments {
 	margin-top: 0pt;
 	margin-bottom: 0pt;

@@ -129,6 +129,24 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def is_next_company_same(company, index)
+    counter = 0
+    company_places_in_array = []
+
+    company_names.each_with_index do |c, i|
+      if ((company == c) && ((index - i).abs == 1))
+        counter += 1
+      else
+        counter = 0
+      end
+    end
+
+    return counter
+  end
+
+
+  end
+
   # checks if next company is the same. If it is, then we'll display
   # the start of the first job in that company and we'll join that
   # with end/current date for that job
@@ -147,7 +165,7 @@ class ApplicationController < ActionController::Base
             start_year = params[:start_years][index]
             changed = true      
           elsif index != 0
-            if (current_company == company) && (current_index % index == 1)
+            if (current_company == company) && ((current_index - index).abs == 1)
               start_month = params[:start_months][index]
               start_year = params[:start_years][index]
               changed = true

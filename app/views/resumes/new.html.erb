@@ -24,7 +24,7 @@
             
             <div class="form-group"></div>
             <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" 
-                    aria-controls="collapseTwo" onclick="showHelpText('#descriptionHelpText', '#contactInformationText');">
+                    aria-controls="collapseTwo" onclick="showHelpText('#descriptionHelpText', '#contactInformationText', '#collapseTwo');">
               <span class="glyphicon glyphicon-arrow-right"></span>
             </a>
         </div> 
@@ -40,7 +40,7 @@
                     <span class="glyphicon glyphicon-arrow-left"></span>
             </a>
             <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" 
-                    aria-controls="collapseThree" onclick="showHelpText('#workExperienceHelpText', '#descriptionHelpText');">
+                    aria-controls="collapseThree" onclick="showHelpText('#workExperienceHelpText', '#descriptionHelpText', '#collapseThree');">
               <span class="glyphicon glyphicon-arrow-right"></span>
             </a>
         </div>    
@@ -142,7 +142,7 @@
     <div class="panel panel-default col-md-8 headingOne">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  onclick="showHelpTextFromMain('#contactInformationText', '#collapseOne');">
             Contact Information
           </a>
         </h4>
@@ -159,7 +159,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  onclick="showHelpTextFromMain('#descriptionHelpText', '#collapseTwo');">
           Description
         </a>
       </h4>
@@ -173,7 +173,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"  onclick="showHelpTextFromMain('#workExperienceHelpText', '#collapseThree');">
           Work Experience
         </a>
       </h4>
@@ -184,14 +184,14 @@
       </div>
       <a href="javascript:;" id="addNewTag" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
       <div class="form-group"></div>
-      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseThree">Back</a>
-      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">Next</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseThree" onclick="expandNext('#collapseThree', '#collapseTwo', '#descriptionHelpText');">Back</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo" onclick="expandNext('#collapseThree', '#collapseFour', '#educationHelpText');">Next</a>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingFour">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"  onclick="showHelpTextFromMain('#educationHelpText', '#collapseFour');">
           Education
         </a>
       </h4>
@@ -202,14 +202,14 @@
       </div>
       <a href="javascript:;" id="addNewEducationForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
       <div class="form-group"></div>
-      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Back</a>
-      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">Next</a>      
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="expandNext('#collapseFour', '#collapseThree', '#workExperienceHelpText');">Back</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo" onclick="expandNext('#collapseFour', '#collapseFive', '#certificationsAndLicensureHelpText');">Next</a>      
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingFive">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"  onclick="showHelpTextFromMain('#certificationsAndLicensureHelpText', '#collapseFive');">
           Certifications and Licensure
         </a>
       </h4>
@@ -220,13 +220,14 @@
       </div>
       <a href="javascript:;" id="addNewCertificationsAndLicensureForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
       <div class="form-group"></div>
-      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">Next</a>      
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" onclick="expandNext('#collapseFive', '#collapseFour', '#educationHelpText');">Back</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseTwo" onclick="expandNext('#collapseFive', '#collapseSix', '#mshipsAndProfessionalAffiliations');">Next</a>      
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingSix">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix"  onclick="showHelpTextFromMain('#mshipsAndProfessionalAffiliations', '#collapseSix');">
           Memberships and Professional Affiliations
         </a>
       </h4>
@@ -237,13 +238,14 @@
       </div>
       <a href="javascript:;" id="addNewMembershipsAndAffiliationsForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
       <div class="form-group"></div>
-      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseTwo">Next</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" onclick="expandNext('#collapseSix', '#collapseFive', '#certificationsAndLicensureHelpText');">Back</a>
+      <a class="collapsed btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseTwo" onclick="expandNext('#collapseSix', '#collapseSeven', '#otherText');">Next</a>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingSeven">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" onclick="showHelpTextFromMain('#otherText', '#collapseSeven');">
           Other
         </a>
       </h4>
@@ -257,7 +259,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingEight">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight" onclick="showHelpTextFromMain('#other2Text', '#collapseEight');">
           Other 2
         </a>
       </h4>

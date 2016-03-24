@@ -8,7 +8,7 @@ $(document).ready(function(){
   });
 
   $("#addNewEducationForm").click(function(){
-  	$("#education").append($("#education_form").html());
+    $("#education").append($("#education_form").html());
   });
 
   $("#addNewCertificationsAndLicensureForm").click(function(){
@@ -58,27 +58,96 @@ $(document).ready(function(){
 });
 
 // shows next item in help text, hides previous one
-function showHelpText(HelpTextId, currentHelpTextId, back) {
-  // if we're going to first (Contact Information) section, then toggle to show that section
-  if ((HelpTextId === '#contactInformationText') && (back === 'back')) {
-    $('#collapseOne').collapse('toggle');
-    $(currentHelpTextId).toggle();  
-    $(HelpTextId).toggle();    
+function showHelpText(HelpTextId, currentHelpTextId, collapseSectionId, back) {
+
+  collapseSections = ['#collapseOne', '#collapseTwo', '#collapseThree', '#collapseFour', '#collapseFive', '#collapseSix', '#collapseSeven',
+                      '#collapseEight'];
+
+  if ((HelpTextId === '#contactInformationText')) {
+    $('#collapseOne').collapse('show');
+    console.log('match');
   }  
-  else if (back === 'back') {
-    $(HelpTextId).toggle();
-    $(currentHelpTextId).toggle();
-  }
-  // if we're going to second (Description) field, then toggle Contact Information section to be hidden
-  else if (currentHelpTextId === '#contactInformationText') {
-    $('#collapseOne').collapse('toggle');
-    $(currentHelpTextId).toggle();  
-    $(HelpTextId).toggle();
-  }
-  else {
-    $(currentHelpTextId).toggle();    
-    $(HelpTextId).toggle();
-  }
+
+  hideOtherSections(collapseSectionId);
+  $(HelpTextId).toggle();
+  $(currentHelpTextId).hide();
+
+  // // if we're going to first (Contact Information) section, then toggle to show that section
+  // if ((HelpTextId === '#contactInformationText') && (back === 'back')) {
+  //   $('#collapseOne').collapse('toggle');
+  //   $(currentHelpTextId).toggle();  
+  //   $(HelpTextId).toggle();    
+  // }  
+  // else if (back === 'back') {
+  //   $(HelpTextId).toggle();
+  //   $(currentHelpTextId).toggle();
+  // }
+  // // if we're going to second (Description) field, then toggle Contact Information section to be hidden
+  // else if (currentHelpTextId === '#contactInformationText') {
+  //   $('#collapseOne').collapse('toggle');
+  //   $(currentHelpTextId).toggle();  
+  //   $(HelpTextId).toggle();
+  // }
+  // else {
+  //   $(currentHelpTextId).toggle();    
+  //   $(HelpTextId).toggle();
+  // }
+}
+
+// shows help text when we click on section item
+function showHelpTextFromMain(currentHelpTextId, mainAccordionId) {
+  helpTextCollection = ['#contactInformationText', '#descriptionHelpText', '#workExperienceHelpText', '#educationHelpText', 
+                        '#certificationsAndLicensureHelpText', '#mshipsAndProfessionalAffiliations', '#otherText', '#other2Text'];
+
+
+  helpTextCollection.forEach(function(val) { 
+    if ($('#collapseOne').attr('aria-expanded') === undefined) 
+      $('#collapseOne').collapse('hide');
+    if ((currentHelpTextId === '#contactInformationText') && ($('#collapseOne').attr('aria-expanded') === 'false'))
+      $(currentHelpTextId).hide();
+    if ((val === currentHelpTextId) && ($(mainAccordionId).attr('aria-expanded') === 'false') || 
+        (val === currentHelpTextId) && ($(mainAccordionId).attr('aria-expanded') === undefined)) 
+    {
+      $(val).show();
+      return hideOtherSections(mainAccordionId);
+    }
+    else
+      $(val).hide();
+  });
+}
+
+function hideOtherSections(currentAccordionId) {
+
+  collapseSections = ['#collapseOne', '#collapseTwo', '#collapseThree', '#collapseFour', '#collapseFive', '#collapseSix', '#collapseSeven',
+                      '#collapseEight'];
+
+  collapseSections.forEach(function(val) {
+    if (currentAccordionId !== val)
+      $(val).collapse('hide');
+    else
+      $(val).collapse('show');
+  });
+}
+
+function hideOtherHelpText(currenthelpTextId) {
+
+  helpTextCollection = ['#contactInformationText', '#descriptionHelpText', '#workExperienceHelpText', '#educationHelpText', 
+                        '#certificationsAndLicensureHelpText', '#mshipsAndProfessionalAffiliations', '#otherText', '#other2Text'];
+
+  helpTextCollection.forEach(function(val) {
+    if (currenthelpTextId !== val)
+      $(val).hide();
+    else
+      $(val).show();
+  });
+}
+
+function expandNext(currentAccordionId, nextAccordionId, nextHelpTextId) {
+  
+  hideOtherHelpText(nextHelpTextId);
+
+  $(currentAccordionId).collapse('hide');
+  $(nextAccordionId).collapse('show');
 }
 
 function toggler(divId) {

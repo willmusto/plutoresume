@@ -177,6 +177,10 @@ div.noAccomplishments {
 	margin-top: 10pt;
 }
 
+div.sameCompanyNoAccomplishments {
+	margin-top: 7pt;
+}
+
 p.accomplishments {
 	margin-top: 0pt;
 	margin-bottom: 0pt;

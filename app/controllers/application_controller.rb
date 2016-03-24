@@ -216,15 +216,15 @@ class ApplicationController < ActionController::Base
 
     if current_index - 1 == 0 && (end_month[0].blank? || end_year[0].blank?)
       if start_month.blank?
-        date = "#{start_year + ' - ' + 'Present'}"
+        date = "#{' ' + start_year + ' - ' + 'Present'}"
       else
-        date = "#{start_month + ' ' + start_year + ' - ' + 'Present'}"
+        date = "#{' ' + start_month + ' ' + start_year + ' - ' + 'Present'}"
       end
     else
       if start_month.blank?
-        date = "#{start_year + ' - ' + end_year}"
+        date = "#{' ' + start_year + ' - ' + end_year}"
       else
-        date = "#{start_month + ' ' + start_year + ' - ' + end_month + ' ' + end_year}"
+        date = "#{' ' + start_month + ' ' + start_year + ' - ' + end_month + ' ' + end_year}"
       end
     end
     date

@@ -30,7 +30,6 @@ class ResumesController < ApplicationController
 
 	# Uploads authenticated user's resume to GDrive's master shared folder
 	def create
-		# fail 
 		unless session.has_key?(:credentials)
 			return redirect_to('/auth/google_oauth2/callback')
 		end

@@ -151,8 +151,8 @@ class ApplicationController < ActionController::Base
               start_month = params[:start_months][index]
               start_year = params[:start_years][index]
               changed = true
-            else
-              changed = false
+            # else
+            #   changed = false
             end     
           else
             changed = false

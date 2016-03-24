@@ -143,7 +143,7 @@ class ApplicationController < ActionController::Base
       company_params[current_index..-1].each_with_index do |company, index|
         if company_params.length > 1
           if current_company == company && current_company == company_params[current_index..-1][current_index + 1]
-            # start_month = params[:start_months][current_index]
+            start_month = params[:start_months][current_index]
             start_year = params[:start_years][current_index]
             changed = true
           elsif index != 0
@@ -154,8 +154,10 @@ class ApplicationController < ActionController::Base
               company_params.each_with_index do |company, i|
                 if ((company == current_company) && ((company_params.length - 1) > i))
                   start_year = params[:start_years][i]
+                  start_month = params[:start_months][i]
                 elsif ((company == current_company) && ((company_params.length - 1) == i))
                   start_year = params[:start_years][i]
+                  start_month = params[:start_months][i]
                 end
               end
             # else

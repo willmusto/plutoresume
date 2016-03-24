@@ -61,12 +61,12 @@ class ResumesController < ApplicationController
 
 		# This will convert HTML + CSS into a .pdf file
 		def template_to_pdf
-			# content = File.read("#{Rails.root}/public/resume_copy.html.erb")
-			# # content = File.read("#{Rails.root}/app/views/resumes/_sample_resume_unminified_work.html.erb")
-			# template = ERB.new(content)
-			# kit = PDFKit.new(template.result(binding), :header_html => "#{Rails.root}/public/resume_header.html")
-			# # File.open("#{Rails.root}/public/template_result.pdf", 'w')
-			# # kit.stylesheets << "#{Rails.root}/public/my_css.css"
+			content = File.read("#{Rails.root}/public/resume_copy.html.erb")
+			# content = File.read("#{Rails.root}/app/views/resumes/_sample_resume_unminified_work.html.erb")
+			template = ERB.new(content)
+			kit = PDFKit.new(template.result(binding), :header_html => "#{Rails.root}/public/resume_header.html")
+			# File.open("#{Rails.root}/public/template_result.pdf", 'w')
+			# kit.stylesheets << "#{Rails.root}/public/my_css.css"
 			
 			
 			# filename = "#{Rails.root}/public/" + "#{(0...10).map { (65 + rand(26)).chr }.join}" + ".pdf"

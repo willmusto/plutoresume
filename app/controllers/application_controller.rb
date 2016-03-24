@@ -149,7 +149,7 @@ class ApplicationController < ActionController::Base
             company_params[current_index..-1].each_with_index do |company|
               company_array_length = company_params.length - 1
               if company == current_company
-                start_year = params[:start_year][current_index]
+                start_year = params[:start_years][current_index]
               end
             end      
           elsif index != 0

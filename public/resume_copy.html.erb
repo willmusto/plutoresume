@@ -35,7 +35,7 @@
 					<% if company_start_time = is_next_company_same(params[:company_names][i - 1], i - 1, params[:company_names]) %>
 
 						<h4 class="companyName sameCompanyName"><%= params[:company_names][i - 1] %> - <%= params[:cities][i - 1] %>, <%= get_state_abbreviation(params[:states][i - 1]) %></h4>	<h4 class="careerDate sameCareerDate"><%= get_date(company_start_time[0], company_start_time[1], params[:end_months][i - 1], params[:end_years][i - 1], i) %></h4>
-						<div class="JDescription"><h4 class="JobTitle"><span class="secondJobTitle"><%= params[:job_titles][i - 1] %></span> <span class="secondJobTitleDate">(<%= get_date(params[:start_months][i - 1], params[:start_years][i - 1], params[:end_months][i - 1], params[:end_years][i - 1], i) %>)</span></h4></div>
+						<div class="JDescription"><h4 class="JobTitle"><span class="secondJobTitle"><%= params[:job_titles][i - 1] %></span> <span class="secondJobTitleDate"> (<%= get_date(params[:start_months][i - 1], params[:start_years][i - 1], params[:end_months][i - 1], params[:end_years][i - 1], i) %>)</span></h4></div>
 						<p class="jobDescription"><%= params[:job_descriptions][i - 1] %></p>
 
 							<% if !params[:accomplishments][i - 1].empty? %>

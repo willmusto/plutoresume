@@ -44,10 +44,10 @@
 								<% bullet_point_items(params[:accomplishments][i - 1]).each do |item| %>
 									<li class="firstAccomplishment"><%= item %></li>
 								<% end %>
+								</ul>
 							<% else %>
 								<div class="noAccomplishments"></div>
 							<% end %>
-						</ul>
 
 					<% elsif is_company_unique(params[:company_names][i - 1], params[:company_names]) %>
 
@@ -61,10 +61,10 @@
 								<% bullet_point_items(params[:accomplishments][i - 1]).each do |item| %>
 									<li class="firstAccomplishment"><%= item %></li>
 								<% end %>
+								</ul>
 							<% else %>
 								<div class="noAccomplishments"></div>
 							<% end %>
-						</ul>
 
 					<% else %>
 
@@ -77,6 +77,8 @@
 								<li class="secondFirstAccomplishment"><%= item %></li>
 								<% end %>
 							</ul>
+						<% else %>
+							<div class="noAccomplishments"></div>
 						<% end %>					
 
 					<% end %>

@@ -63,9 +63,11 @@ function showHelpText(HelpTextId, currentHelpTextId, collapseSectionId, back) {
   collapseSections = ['#collapseOne', '#collapseTwo', '#collapseThree', '#collapseFour', '#collapseFive', '#collapseSix', '#collapseSeven',
                       '#collapseEight'];
 
+  getHelpTextHeading(HelpTextId)
+
+
   if ((HelpTextId === '#contactInformationText')) {
     $('#collapseOne').collapse('show');
-    console.log('match');
   }  
 
   hideOtherSections(collapseSectionId);
@@ -99,12 +101,13 @@ function showHelpTextFromMain(currentHelpTextId, mainAccordionId) {
   helpTextCollection = ['#contactInformationText', '#descriptionHelpText', '#workExperienceHelpText', '#educationHelpText', 
                         '#certificationsAndLicensureHelpText', '#mshipsAndProfessionalAffiliations', '#otherText', '#other2Text'];
 
-
   helpTextCollection.forEach(function(val) { 
-    if ($('#collapseOne').attr('aria-expanded') === undefined) 
+    if ($('#collapseOne').attr('aria-expanded') === undefined) {
       $('#collapseOne').collapse('hide');
-    if ((currentHelpTextId === '#contactInformationText') && ($('#collapseOne').attr('aria-expanded') === 'false'))
+    }
+    if ((currentHelpTextId === '#contactInformationText') && ($('#collapseOne').attr('aria-expanded') === 'false')) {
       $(currentHelpTextId).hide();
+    }
     if ((val === currentHelpTextId) && ($(mainAccordionId).attr('aria-expanded') === 'false') || 
         (val === currentHelpTextId) && ($(mainAccordionId).attr('aria-expanded') === undefined)) 
     {
@@ -114,6 +117,9 @@ function showHelpTextFromMain(currentHelpTextId, mainAccordionId) {
     else
       $(val).hide();
   });
+
+  getHelpTextHeading(currentHelpTextId);
+
 }
 
 function hideOtherSections(currentAccordionId) {
@@ -146,10 +152,70 @@ function expandNext(currentAccordionId, nextAccordionId, nextHelpTextId) {
   
   hideOtherHelpText(nextHelpTextId);
 
+  getHelpTextHeading(nextHelpTextId);
+
   $(currentAccordionId).collapse('hide');
   $(nextAccordionId).collapse('show');
 }
 
 function toggler(divId) {
     $("#" + divId).toggle();
+}
+
+function getHelpTextHeading(HelpTextId) {
+  if (HelpTextId === '#contactInformationText') {
+    if ($('#contactInformationText').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else
+      $('#helpHeading').text('Contact Information');
+  }
+
+  if (HelpTextId == '#descriptionHelpText') {
+    if ($('#descriptionHelpText').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else
+      $('#helpHeading').text('Description');
+  }
+
+  if (HelpTextId == '#workExperienceHelpText') {
+    if ($('#workExperienceHelpText').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else    
+      $('#helpHeading').text('Work Experience');
+  }
+
+  if (HelpTextId == '#educationHelpText') {
+    if ($('#educationHelpText').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else      
+      $('#helpHeading').text('Education');
+  }
+  
+  if (HelpTextId == '#certificationsAndLicensureHelpText') {
+    if ($('#certificationsAndLicensureHelpText').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else 
+      $('#helpHeading').text('Certifications and Licensure');
+  }
+
+  if (HelpTextId == '#mshipsAndProfessionalAffiliations') {
+    if ($('#mshipsAndProfessionalAffiliations').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else 
+      $('#helpHeading').text('Memberships and Professional Affiliations');
+  }
+
+  if (HelpTextId == '#otherText') {
+    if ($('#otherText').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else 
+      $('#helpHeading').text('Other');
+  }
+
+  if (HelpTextId == '#other2Text') {
+    if ($('#other2Text').attr('style') === 'display: none;')
+      $('#helpHeading').text('');
+    else 
+      $('#helpHeading').text('Other 2');
+  }
 }

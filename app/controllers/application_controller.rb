@@ -202,6 +202,7 @@ class ApplicationController < ActionController::Base
 
   # Gets start month, start year - end month, end year
   def get_date(start_month, start_year, end_month, end_year, current_index)
+    start_month = start_month.strip
     if current_index - 1 == 0 && (end_month[0].blank? || end_year[0].blank?)
       date = "#{start_month + ' ' + start_year + ' - ' + 'Present'}"
     else
